@@ -6,26 +6,138 @@
     <title><%= title %></title>
     <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/js/form.js"></script>
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 <%- include('partials/navbar') %>
 
-<!-- Contact Hero Section -->
-<section class="py-5 text-center" style="background: url('/images/hero.jpg') center center/cover no-repeat; color: #fff; position:relative;">
-  <div style="background:rgba(0,0,0,0.55);position:absolute;inset:0;"></div>
-  <div class="container position-relative" style="z-index:2;">
-    <h1 class="display-4 fw-bold mb-3">Contact Us</h1>
-    <p class="lead mb-0">We're here to help you with your aluminium and glass needs</p>
+<!-- Blog Hero Section -->
+<section class="py-5 text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-3">Our Blog</h1>
+    <p class="lead mb-0">Stay updated with the latest tech insights and industry trends</p>
   </div>
 </section>
 
+<!-- Blog Content -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <h2 class="mb-4">Latest Posts</h2>
+      
+      <!-- Blog Post 1 -->
+      <article class="card mb-4 shadow-sm">
+        <img src="https://via.placeholder.com/800x400/667eea/ffffff?text=Web+Development+Trends" class="card-img-top" alt="Web Development Trends">
+        <div class="card-body">
+          <h3 class="card-title">Top Web Development Trends in 2024</h3>
+          <p class="card-text">Discover the latest trends shaping the future of web development, from AI integration to progressive web apps and serverless architecture.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">Posted on March 15, 2024</small>
+            <a href="#" class="btn btn-primary btn-sm">Read More</a>
+          </div>
+        </div>
+      </article>
 
-<!-- Bootstrap 5 JS Bundle CDN (optional, for interactive components) -->
+      <!-- Blog Post 2 -->
+      <article class="card mb-4 shadow-sm">
+        <img src="https://via.placeholder.com/800x400/764ba2/ffffff?text=Mobile+App+Development" class="card-img-top" alt="Mobile App Development">
+        <div class="card-body">
+          <h3 class="card-title">Mobile App Development: Native vs Cross-Platform</h3>
+          <p class="card-text">A comprehensive comparison of native and cross-platform mobile development approaches to help you choose the right strategy for your project.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">Posted on March 10, 2024</small>
+            <a href="#" class="btn btn-primary btn-sm">Read More</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post 3 -->
+      <article class="card mb-4 shadow-sm">
+        <img src="https://via.placeholder.com/800x400/667eea/ffffff?text=Cloud+Computing" class="card-img-top" alt="Cloud Computing">
+        <div class="card-body">
+          <h3 class="card-title">Cloud Migration: A Complete Guide for Businesses</h3>
+          <p class="card-text">Learn the essential steps, benefits, and best practices for migrating your business applications and data to the cloud.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">Posted on March 5, 2024</small>
+            <a href="#" class="btn btn-primary btn-sm">Read More</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post 4 -->
+      <article class="card mb-4 shadow-sm">
+        <img src="https://via.placeholder.com/800x400/764ba2/ffffff?text=Cybersecurity" class="card-img-top" alt="Cybersecurity">
+        <div class="card-body">
+          <h3 class="card-title">Essential Cybersecurity Practices for Small Businesses</h3>
+          <p class="card-text">Protect your business from cyber threats with these essential security practices and tools that every small business should implement.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">Posted on February 28, 2024</small>
+            <a href="#" class="btn btn-primary btn-sm">Read More</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Categories</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none">Web Development (8)</a></li>
+            <li><a href="#" class="text-decoration-none">Mobile Apps (5)</a></li>
+            <li><a href="#" class="text-decoration-none">Cloud Computing (6)</a></li>
+            <li><a href="#" class="text-decoration-none">Cybersecurity (4)</a></li>
+            <li><a href="#" class="text-decoration-none">Digital Marketing (7)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Recent Posts</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-decoration-none">Top Web Development Trends in 2024</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Mobile App Development Guide</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Cloud Migration Best Practices</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Cybersecurity for Small Business</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h5>Newsletter</h5>
+        </div>
+        <div class="card-body">
+          <p>Subscribe to our newsletter for the latest updates and insights.</p>
+          <form>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your email">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CTA Section -->
+<section class="py-5 text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h2>Ready to Start Your Project?</h2>
+      <p class="lead">Let's discuss how we can bring your ideas to life</p> <br>
+      <a href="/get-started" class="btn btn-primary btn-lg">Get Started Today</a>
+    </div>
+  </div>
+</section>
+<!-- Bootstrap 5 JS Bundle CDN -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <%- include('partials/footer') %>
-<!-- Floating WhatsApp and Phone Buttons -->
-
 </body>
 </html>
