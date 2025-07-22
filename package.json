@@ -1,12 +1,14 @@
 {
-  "name": "aluminium",
+  "name": "softedigi-website",
   "version": "1.0.0",
-  "description": "this website is a web application used for aluminium business",
+  "description": "Professional website for Softedigi - A leading software development agency",
   "license": "MIT",
-  "author": "Ali Abdullah",
+  "author": "Softedigi Team",
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

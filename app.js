@@ -23,18 +23,14 @@ app.get("/contact", (req,res)=>{
 app.get("/get-started", (req,res)=>{
     res.render("get-started",{title: "Get Started Page"});
 })
-app.get("/blogs", (req,res)=>{
-    res.render("blogs",{title: "Blogs Page"});
+app.get("/blog", (req,res)=>{
+    res.render("blog",{title: "Blogs Page"});
 })
-app.get("/blog-details", (req,res)=>{
-    res.render("blog-details",{title: "Blog Details Page"});
+
+app.get("/package", (req,res)=>{
+    res.render("package",{title: "Package Page"});
 })
-app.get("/portfolio", (req,res)=>{
-    res.render("portfolio",{title: "Portfolio Page"});
-})
-app.get("/portfolio-details", (req,res)=>{
-    res.render("portfolio-details",{title: "Portfolio Details Page"});
-})
+
 app.use((req, res) => {
     res.status(404).send("404 Not Found - Check your route and file structure.");
 });
