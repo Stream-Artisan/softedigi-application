@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<%- include('partials/navbar') %>
+
+<!-- Blog Post Hero Section -->
+<section class="py-5 text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-3">Welcome to Softedigi — Where Ideas Turn Into Digital Reality</h1>
+    <p class="lead mb-0">Posted on June 1, 2025</p>
+  </div>
+</section>
+
+<!-- Blog Post Content -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <img src="https://plus.unsplash.com/premium_photo-1683309565422-77818a287060?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D" class="img-fluid rounded mb-4" alt="Welcome to Softedigi">
+      
+      <div class="blog-content">
+        <p class="lead">At Softedigi, we believe that every great achievement starts with an idea. Our mission is to transform your innovative concepts into powerful digital solutions that drive success and growth.</p>
+        
+        <h3>Our Journey</h3>
+        <p>Founded with a vision to bridge the gap between imagination and reality, Softedigi has been at the forefront of digital transformation. We understand that in today's fast-paced world, businesses need more than just technology – they need a partner who can translate their vision into tangible results.</p>
+        
+        <h3>What Sets Us Apart</h3>
+        <p>Our approach is simple yet effective: we listen, we understand, and we deliver. Every project we undertake is a testament to our commitment to excellence and innovation. From web development to mobile applications, from digital marketing to e-book services, we cover the entire spectrum of digital solutions.</p>
+        
+        <h3>Our Commitment</h3>
+        <p>We're not just service providers; we're your digital partners. Our team of experts works tirelessly to ensure that your ideas don't just come to life – they thrive in the digital landscape. We believe in building long-term relationships based on trust, quality, and results.</p>
+        
+        <div class="mt-5">
+          <a href="/blog" class="btn btn-primary">← Back to Blog</a>
+          <a href="/get-started" class="btn btn-outline-primary">Get Started with Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap 5 JS Bundle CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<%- include('partials/footer') %>
+</body>
+</html>

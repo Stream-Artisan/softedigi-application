@@ -18,9 +18,11 @@ const routes = [
     { path: "/contact", view: "contact", title: "Contact Page" },
     { path: "/get-started", view: "get-started", title: "Get Started Page" },
     { path: "/blog", view: "blog", title: "Blogs Page" },
+    { path: "/blog/welcome-to-softedigi", view: "blog-post-1", title: "Welcome to Softedigi — Where Ideas Turn Into Digital Reality" },
+    { path: "/blog/future-of-web-development", view: "blog-post-2", title: "The Future of Web Development: Trends to Watch" },
+    { path: "/blog/maximizing-roi-digital-marketing", view: "blog-post-3", title: "Maximizing ROI with Digital Marketing Strategies" },
     { path: "/privacy", view: "privacy", title: "Privacy Page" },
-    { path: "/terms", view: "terms", title: "Terms Page" },
-    // { path: "/packages", view: "package", title: "Package Page" }
+    { path: "/terms", view: "terms", title: "Terms Page" }
 ];
 
 // Generate routes dynamically
