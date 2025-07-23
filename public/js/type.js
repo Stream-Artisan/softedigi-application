@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         startDelay: 1000,      
         loop: true,
         showCursor: true,
-        cursorChar: '|',      
+        cursorChar: '',      
         autoInsertCss: true
     });
 });

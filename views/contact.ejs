@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <script src="/js/form.js"></script>
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <%- include('partials/navbar') %>
@@ -32,7 +32,7 @@
     <!-- Contact Info & Form -->
     <section class="container my-5">
       <div class="row g-5">
-        <div class="col-md-5">
+        <div class="col-md-5 order-2 order-md-1 contact-info-mobile">
           <h2 class="mb-4">Get in Touch</h2>
           <p><strong>Address:</strong> Karachi, Pakistan</p>
           <p>
@@ -56,22 +56,28 @@
             ></a>
           </div>
           <div class="mt-4">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28956.122070580215!2d67.0674989752744!3d24.88040026929846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ea5139a1863%3A0x3f2a67c5c9394c60!2sAnum%20Bessing!5e0!3m2!1sen!2s!4v1753290234845!5m2!1sen!2s"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28956.122070580215!2d67.0674989752744!3d24.88040026929846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ea5139a1863%3A0x3f2a67c5c9394c60!2sAnum%20Bessing!5e0!3m2!1sen!2s!4v1753290234845!5m2!1sen!2s"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 order-1 order-md-2 contact-form-mobile">
           <h2 class="mb-4">Send Us a Message</h2>
-          <form id="contactForm" method="post" action="/contact" autocomplete="off">
+          <form
+            id="contactForm"
+            method="post"
+            action="/contact"
+            autocomplete="off"
+          >
             <div class="mb-3">
-              <!-- <label for="name" class="form-label">Your Name</label> -->
               <input
                 type="text"
                 class="form-control"
@@ -81,7 +87,6 @@
               />
             </div>
             <div class="mb-3">
-              <!-- <label for="email" class="form-label">Your Email</label> -->
               <input
                 type="email"
                 class="form-control"
@@ -91,7 +96,6 @@
               />
             </div>
             <div class="mb-3">
-              <!-- <label for="phone" class="form-label">Phone (optional)</label> -->
               <input
                 type="text"
                 class="form-control"
@@ -100,7 +104,6 @@
               />
             </div>
             <div class="mb-3">
-              <!-- <label for="message" class="form-label">Your Message</label> -->
               <textarea
                 class="form-control"
                 id="message"
@@ -126,7 +129,7 @@
     >
       <div class="row">
         <div class="col-md-8 mx-auto">
-      <h2 class="text-white-50">Ready to Start Your Project?</h2>
+          <h2 class="text-white-50">Ready to Start Your Project?</h2>
           <p class="lead">Let's discuss how we can bring your ideas to life</p>
           <br />
           <a href="/get-started" class="btn btn-primary btn-lg"
