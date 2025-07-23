@@ -26,7 +26,7 @@
         </a>
       </div>
       <div class="hidden md:flex items-center space-x-6">
-        <ul class="flex space-x-6">
+        <ul class="flex space-x-12">
           <li>
             <a
               href="/"
@@ -63,7 +63,7 @@
             >
           </li>
         </ul>
-        <div class="flex items-center space-x-2">
+        <div class="flex items-center m-lg-5 space-x-2">
           <a
             href="/get-started"
             class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
@@ -104,7 +104,7 @@
       >
       <a
         href="/get-started"
-        class="bg-gradient-to-r from-black to-blue-600 text-white px-4 py-2 rounded-md hover:bg-gradient-to-r hover:from-gray-900 hover:to-blue-700 transition-colors duration-200 w-full text-center"
+        class="bg-gradient-to-r from-black to-blue-600 text-white px-4 py-2 rounded-md hover:bg-gradient-to-r hover:from-gray-900 hover:to-blue-700 transition-colors duration-200 w-full text-center "
         >Get Started</a
       >
     </div>
@@ -144,10 +144,11 @@
       body.dark {
         background-color: transparent;
         color: #e2e8f0;
+        /* width: 80%; */
       }
       nav {
         background-color: #1a202c !important;
-        width: 90%;
+        /* width: 90%; */
       }
 
       #mobile-menu {
@@ -156,6 +157,11 @@
       body.dark .bg-gray-800,
       body.dark nav,
       body.dark #mobile-menu {
+        /* justify-content: space-between; */
+        background-color: #1a202c !important;
+      }
+      body.dark #mobile-menu a {
+        /* justify-content: space-between; */
         background-color: #1a202c !important;
       }
       body.dark .hover\:bg-gray-700:hover {

@@ -36,7 +36,18 @@ routes.forEach(route => {
 app.use((req, res) => {
     res.status(404).render("404", { title: "Page Not Found" });
 });
-
+app.post('/index' , (req,res)=>{
+    const {name,email,subject,message} = req.body;
+    console.log(name,email,subject,message);
+})
+app.post('/contact' , (req,res)=>{
+    const {name,email,subject,message} = req.body;
+    console.log(name,email,subject,message);
+});
+app.post('/get-started' , (req,res)=>{
+    const {name,email,subject,message} = req.body;
+    console.log(name,email,subject,message);
+});
 app.listen(8000, () => {
     console.log("Server is running on port 8000");
 });
