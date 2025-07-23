@@ -26,6 +26,7 @@ body {
 }
 .hero{
   height: 40vh;
+  margin-bottom: 30px;
 }
 .hero h1{
   font-size: 1.5rem;
@@ -152,6 +153,7 @@ body{margin-top:20px;}
   border: 3px solid #fff;
   border-radius: 50%;
 }
+
 /* blog */
  /* Animation Styles */
       .fade-in {
