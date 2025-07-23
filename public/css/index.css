@@ -153,3 +153,75 @@ body{margin-top:20px;}
   border-radius: 50%;
 }
 /* blog */
+ /* Animation Styles */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-in-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 0.8s ease-in-out;
+      }
+      .slide-in-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .slide-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease-in-out;
+      }
+      .slide-in-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .scale-in {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.6s ease-in-out;
+      }
+      .scale-in.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .feature-box-1 {
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+      }
+      .feature-box-1:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        border-color: #007bff;
+      }
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      }
+      .hero {
+        animation: fadeInDown 1s ease-in-out;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .img-hover {
+        transition: all 0.3s ease;
+      }
+      .img-hover:hover {
+        transform: scale(1.05);
+      }
