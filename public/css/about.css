@@ -13,7 +13,7 @@ body {
   
   /* Combine gradient with background image */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                    url('https://images.unsplash.com/photo-1634176866089-b633f4aec882?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRlY2hub2xvZ3klMjBnbG9iZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D');
+                    url('https://media.istockphoto.com/id/2035571068/photo/dynamic-digital-world-map-emphasize-western-europe-continental-for-ai-powered-global-network.webp?a=1&b=1&s=612x612&w=0&k=20&c=lcfe8tk1y6QRM_lRxG3-r_4zFFqrEi7ngCdYuxSdC4o=');
   background-size: cover; 
   background-repeat: no-repeat; 
   background-attachment: fixed;
