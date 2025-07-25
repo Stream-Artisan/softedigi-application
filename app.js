@@ -3,6 +3,37 @@ const express = require("express");
 // const nodemailer = require("nodemailer");
 const app = express();
 
+// Add compression and caching middleware
+const compression = require('compression');
+
+// Enable compression
+app.use(compression());
+
+// Set cache headers for static assets
+app.use('/css', express.static('public/css', {
+    maxAge: '1y',
+    setHeaders: (res, path) => {
+        res.setHeader('Cache-Control', 'public, max-age=31536000');
+        res.setHeader('Expires', new Date(Date.now() + 31536000000).toUTCString());
+    }
+}));
+
+app.use('/js', express.static('public/js', {
+    maxAge: '1y',
+    setHeaders: (res, path) => {
+        res.setHeader('Cache-Control', 'public, max-age=31536000');
+        res.setHeader('Expires', new Date(Date.now() + 31536000000).toUTCString());
+    }
+}));
+
+app.use('/images', express.static('public/images', {
+    maxAge: '1y',
+    setHeaders: (res, path) => {
+        res.setHeader('Cache-Control', 'public, max-age=31536000');
+        res.setHeader('Expires', new Date(Date.now() + 31536000000).toUTCString());
+    }
+}));
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
