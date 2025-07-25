@@ -1,84 +1,84 @@
 require('dotenv').config();
 const express = require("express");
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer");
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// Hostinger Email Configuration
-const transporter = nodemailer.createTransport({
-    host: 'smtp.hostinger.com',
-    port: 587,
-    secure: false, // false for 587, true for 465
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+// // Hostinger Email Configuration
+// const transporter = nodemailer.createTransport({
+//     host: 'smtp.hostinger.com',
+//     port: 587,
+//     secure: false, // false for 587, true for 465
+//     auth: {
+//         user: process.env.EMAIL_USER,
+//         pass: process.env.EMAIL_PASS
+//     },
+//     tls: {
+//         rejectUnauthorized: false
+//     }
+// });
 
-// Test transporter configuration
-transporter.verify(function(error, success) {
-    if (error) {
-        console.log('SMTP connection error:', error);
-    } else {
-        console.log('SMTP server is ready to take our messages');
-    }
-});
+// // Test transporter configuration
+// transporter.verify(function(error, success) {
+//     if (error) {
+//         console.log('SMTP connection error:', error);
+//     } else {
+//         console.log('SMTP server is ready to take our messages');
+//     }
+// });
 
-// Email sending function with better error handling
-const sendEmail = async (formData, formType) => {
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: 'info@softedigi.com',
-        subject: `New ${formType} Form Submission - Softedigi`,
-        html: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-                <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">
-                    New ${formType} Form Submission
-                </h2>
-                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                    <p style="margin: 10px 0;"><strong>Name:</strong> ${formData.name}</p>
-                    <p style="margin: 10px 0;"><strong>Email:</strong> ${formData.email}</p>
-                    ${formData.phone ? `<p style="margin: 10px 0;"><strong>Phone:</strong> ${formData.phone}</p>` : ''}
-                    ${formData.service ? `<p style="margin: 10px 0;"><strong>Service:</strong> ${formData.service}</p>` : ''}
-                    <p style="margin: 10px 0;"><strong>Message:</strong></p>
-                    <div style="background: white; padding: 15px; border-radius: 4px; border-left: 4px solid #667eea;">
-                        ${formData.message}
-                    </div>
-                </div>
-                <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
-                <p style="color: #666; font-size: 12px; margin: 5px 0;">
-                    <strong>Submitted on:</strong> ${new Date().toLocaleString()}
-                </p>
-                <p style="color: #666; font-size: 12px; margin: 5px 0;">
-                    <strong>Source:</strong> ${formType} - Softedigi Website
-                </p>
-            </div>
-        `
-    };
+// // Email sending function with better error handling
+// const sendEmail = async (formData, formType) => {
+//     const mailOptions = {
+//         from: process.env.EMAIL_USER,
+//         to: 'info@softedigi.com',
+//         subject: `New ${formType} Form Submission - Softedigi`,
+//         html: `
+//             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+//                 <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">
+//                     New ${formType} Form Submission
+//                 </h2>
+//                 <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+//                     <p style="margin: 10px 0;"><strong>Name:</strong> ${formData.name}</p>
+//                     <p style="margin: 10px 0;"><strong>Email:</strong> ${formData.email}</p>
+//                     ${formData.phone ? `<p style="margin: 10px 0;"><strong>Phone:</strong> ${formData.phone}</p>` : ''}
+//                     ${formData.service ? `<p style="margin: 10px 0;"><strong>Service:</strong> ${formData.service}</p>` : ''}
+//                     <p style="margin: 10px 0;"><strong>Message:</strong></p>
+//                     <div style="background: white; padding: 15px; border-radius: 4px; border-left: 4px solid #667eea;">
+//                         ${formData.message}
+//                     </div>
+//                 </div>
+//                 <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+//                 <p style="color: #666; font-size: 12px; margin: 5px 0;">
+//                     <strong>Submitted on:</strong> ${new Date().toLocaleString()}
+//                 </p>
+//                 <p style="color: #666; font-size: 12px; margin: 5px 0;">
+//                     <strong>Source:</strong> ${formType} - Softedigi Website
+//                 </p>
+//             </div>
+//         `
+//     };
 
-    try {
-        console.log('Attempting to send email with options:', {
-            from: mailOptions.from,
-            to: mailOptions.to,
-            subject: mailOptions.subject
-        });
+//     try {
+//         console.log('Attempting to send email with options:', {
+//             from: mailOptions.from,
+//             to: mailOptions.to,
+//             subject: mailOptions.subject
+//         });
         
-        const info = await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully:', info.messageId);
-        return { success: true };
-    } catch (error) {
-        console.error('Email sending failed - Full error:', error);
-        console.error('Error code:', error.code);
-        console.error('Error message:', error.message);
-        return { success: false, error: error.message };
-    }
-};
+//         const info = await transporter.sendMail(mailOptions);
+//         console.log('Email sent successfully:', info.messageId);
+//         return { success: true };
+//     } catch (error) {
+//         console.error('Email sending failed - Full error:', error);
+//         console.error('Error code:', error.code);
+//         console.error('Error message:', error.message);
+//         return { success: false, error: error.message };
+//     }
+// };
 
 // View engine setup
 app.set("view engine","ejs");
