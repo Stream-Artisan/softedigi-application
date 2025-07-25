@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 // const nodemailer = require("nodemailer");
+const { SitemapStream, streamToPromise } = require('sitemap');
 const app = express();
 
 // Add compression and caching middleware
@@ -9,6 +10,16 @@ const compression = require('compression');
 // Enable compression
 app.use(compression());
 
+//site map
+app.get('/sitemap.xml', async (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  const sitemap = new SitemapStream({ hostname: 'https://softedigi.com' });
+  sitemap.write({ url: '/', changefreq: 'daily', priority: 1.0 });
+  sitemap.write({ url: '/about', changefreq: 'monthly', priority: 0.8 });
+  sitemap.end();
+  const xml = await streamToPromise(sitemap);
+  res.send(xml.toString());
+});
 // Set cache headers for static assets
 app.use('/css', express.static('public/css', {
     maxAge: '1y',
