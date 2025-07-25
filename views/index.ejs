@@ -110,12 +110,17 @@
           <div class="col-sm-6 col-lg-4 scale-in">
             <div class="feature-box-1 p-4 bg-light rounded h-100">
               <div class="icon mb-3">
-                <img
-                  src="https://img.icons8.com/?size=64&id=C2nwuFG6vTgV&format=png"
-                  alt="web development icon"
-                  class="img-fluid"
-                  style="width: 64px; height: 64px; object-fit: contain;"
-                />
+                <picture>
+                  <source srcset="/images/web-development.webp" type="image/webp">
+                  <source srcset="/images/web-development.avif" type="image/avif">
+                  <img
+                    src="/images/web-development.png"
+                    alt="web development icon"
+                    class="img-fluid"
+                    style="width: 64px; height: 64px; object-fit: contain;"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               <div class="feature-content">
                 <h5>Web Development</h5>
@@ -239,22 +244,13 @@
             <div class="blog-entry justify-content-end w-100 h-100">
               <a
                 href="/blog/welcome-to-softedigi"
-                class="d-block blog-image-link"
-                style="
-                  height: 250px;
-                  background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0');
-                  background-size: cover;
-                  background-position: center;
-                  border-radius: 12px;
-                  position: relative;
-                  overflow: hidden;
-                  transition: all 0.3s ease;
-                "
+                class="blog-image-link"
+                style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0');"
               >
                 <div class="blog-overlay"></div>
                 <div class="blog-content">
-                  <span class="badge bg-primary mb-2">Technology</span>
-                  <h6 class="text-white mb-0">Welcome to Softedigi</h6>
+                  <span class="badge bg-primary mb-2">Welcome</span>
+                  <h6 class="text-white mb-0">Getting Started</h6>
                 </div>
               </a>
               <div class="text mt-3">
@@ -558,15 +554,25 @@
           <div class="col-md-6">
             <div class="h-100 d-flex flex-column justify-content-center">
               <div class="map-container">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28956.122070580215!2d67.0674989752744!3d24.88040026929846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ea5139a1863%3A0x3f2a67c5c9394c60!2sAnum%20Bessing!5e0!3m2!1sen!2s!4v1753290234845!5m2!1sen!2s"
-                  width="600"
-                  height="450"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
+                <div class="position-relative">
+                  <img 
+                    src="https://maps.googleapis.com/maps/api/staticmap?center=24.88040026929846,67.0674989752744&zoom=15&size=600x450&maptype=roadmap&markers=color:red%7C24.88040026929846,67.0674989752744&key=YOUR_API_KEY"
+                    alt="Softedigi Office Location - Karachi, Pakistan"
+                    class="img-fluid rounded"
+                    style="width: 100%; height: 450px; object-fit: cover;"
+                    loading="lazy"
+                  />
+                  <div class="position-absolute top-50 start-50 translate-middle">
+                    <a 
+                      href="https://www.google.com/maps/place/24.88040026929846,67.0674989752744"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn btn-primary"
+                    >
+                      <i class="bi bi-geo-alt-fill me-2"></i>View on Google Maps
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

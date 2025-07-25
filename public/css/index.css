@@ -280,3 +280,54 @@ body{margin-top:20px;}
     order: 2 !important;
   }
 }
+
+/* CTA Section Styles */
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* Blog Image Styles */
+.blog-image-link {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.blog-image-link:hover {
+  transform: scale(1.05);
+}
+
+/* Hero Section Background */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* Map Container */
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Remove inline styles from existing elements */
+.blog-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+}
+
+.blog-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+}
