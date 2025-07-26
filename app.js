@@ -14,8 +14,24 @@ app.use(compression());
 app.get('/sitemap.xml', async (req, res) => {
   res.header('Content-Type', 'application/xml');
   const sitemap = new SitemapStream({ hostname: 'https://softedigi.com' });
+  
+  // Main pages
   sitemap.write({ url: '/', changefreq: 'daily', priority: 1.0 });
   sitemap.write({ url: '/about', changefreq: 'monthly', priority: 0.8 });
+  sitemap.write({ url: '/services', changefreq: 'monthly', priority: 0.9 });
+  sitemap.write({ url: '/contact', changefreq: 'monthly', priority: 0.7 });
+  sitemap.write({ url: '/get-started', changefreq: 'monthly', priority: 0.8 });
+  sitemap.write({ url: '/blog', changefreq: 'weekly', priority: 0.8 });
+  
+  // Blog posts
+  sitemap.write({ url: '/blog/welcome-to-softedigi', changefreq: 'yearly', priority: 0.6 });
+  sitemap.write({ url: '/blog/future-of-web-development', changefreq: 'yearly', priority: 0.6 });
+  sitemap.write({ url: '/blog/maximizing-roi-digital-marketing', changefreq: 'yearly', priority: 0.6 });
+  
+  // Legal pages
+  sitemap.write({ url: '/privacy', changefreq: 'yearly', priority: 0.5 });
+  sitemap.write({ url: '/terms', changefreq: 'yearly', priority: 0.5 });
+  
   sitemap.end();
   const xml = await streamToPromise(sitemap);
   res.send(xml.toString());
@@ -42,6 +58,7 @@ app.use('/images', express.static('public/images', {
     setHeaders: (res, path) => {
         res.setHeader('Cache-Control', 'public, max-age=31536000');
         res.setHeader('Expires', new Date(Date.now() + 31536000000).toUTCString());
+        res.setHeader('ETag', false);
     }
 }));
 
